@@ -1,4 +1,5 @@
 import { Typography, Box } from '@mui/material'
+import { FC } from 'react'
 
 const defaultData = {
   landlord: {
@@ -42,7 +43,7 @@ interface InvoiceProps {
   data: InvoiceData
 }
 
-const Invoice = ({ data = defaultData }) => {
+const Invoice: FC<InvoiceProps> = ({ data = defaultData }) => {
   const {
     landlord,
     tenant,

@@ -1,7 +1,8 @@
 // make react component which render Invoice using react MUI
 import { FC } from 'react';
+import { InvoiceProps } from '@/components/Invoice/types';
+
 import { Box, Typography } from '@mui/material';
-import { InvoiceProps } from './types';
 
 const Invoice: FC<InvoiceProps> = () => {
   return (

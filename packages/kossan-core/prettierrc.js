@@ -6,9 +6,9 @@ module.exports = {
   printWidth: 100,
   proseWrap: "preserve",
   quoteProps: "as-needed",
-  semi: false,
-  singleQuote: false,
-  tabWidth: 8,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
   trailingComma: "es5",
-  useTabs: true,
+  useTabs: false,
 };

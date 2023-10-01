@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@kossan/core": "workspace:*"
+    "@kossan/core": "workspace:*",
+    "eslint-config-kossan": "workspace:*"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",

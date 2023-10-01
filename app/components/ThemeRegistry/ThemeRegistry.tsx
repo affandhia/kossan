@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 import createCache from '@emotion/cache'
 import { useServerInsertedHTML } from 'next/navigation'
 import { CacheProvider } from '@emotion/react'
@@ -10,7 +10,7 @@ import theme from '@/styles/themes/default'
 
 // This implementation is from emotion-js
 // https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
-export default function ThemeRegistry(props) {
+export default function ThemeRegistry(props: PropsWithChildren<{ options: Record<string, string> }>) {
   const { options, children } = props
 
   const [{ cache, flush }] = useState(() => {
@@ -18,7 +18,7 @@ export default function ThemeRegistry(props) {
     cache.compat = true
     const prevInsert = cache.insert
     let inserted: string[] = []
-    cache.insert = (...args) => {
+    cache.insert = (...args: Array<{ name: string}>) => {
       const serialized = args[1]
       if (cache.inserted[serialized.name] === undefined) {
         inserted.push(serialized.name)

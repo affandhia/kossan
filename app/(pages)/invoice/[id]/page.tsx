@@ -42,18 +42,20 @@ const paymentTerms = {
 const comments = 'Please make checks payable to ABC Rentals.'
 
 export default function InvoiceIdPage() {
+  const invoiceData = {
+    landlord,
+    tenant,
+    invoice,
+    property,
+    payment,
+    otherCharges,
+    paymentTerms,
+    comments,
+  };
+
   return (
     <main>
-      <Invoice
-        landlord={landlord}
-        tenant={tenant}
-        invoice={invoice}
-        property={property}
-        payment={payment}
-        otherCharges={otherCharges}
-        paymentTerms={paymentTerms}
-        comments={comments}
-      />
+      <Invoice data={invoiceData} />
     </main>
   )
 }

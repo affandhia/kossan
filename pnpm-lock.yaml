@@ -6,34 +6,7 @@ settings:
 
 importers:
 
-  .: {}
-
-  packages/kossan-app:
-    dependencies:
-      '@emotion/cache':
-        specifier: ^11.11.0
-        version: 11.11.0
-      '@emotion/react':
-        specifier: ^11.11.1
-        version: 11.11.1(@types/react@18.2.23)(react@18.2.0)
-      '@emotion/styled':
-        specifier: ^11.11.0
-        version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.23)(react@18.2.0)
-      '@mui/icons-material':
-        specifier: ^5.14.11
-        version: 5.14.11(@mui/material@5.14.11)(@types/react@18.2.23)(react@18.2.0)
-      '@mui/material':
-        specifier: ^5.14.11
-        version: 5.14.11(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
-      next:
-        specifier: ^13.5.3
-        version: 13.5.3(react-dom@18.2.0)(react@18.2.0)
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
+  .:
     devDependencies:
       '@types/node':
         specifier: 20.8.0
@@ -65,6 +38,33 @@ importers:
       typescript:
         specifier: 5.2.2
         version: 5.2.2
+
+  packages/kossan-app:
+    dependencies:
+      '@emotion/cache':
+        specifier: ^11.11.0
+        version: 11.11.0
+      '@emotion/react':
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.23)(react@18.2.0)
+      '@emotion/styled':
+        specifier: ^11.11.0
+        version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.23)(react@18.2.0)
+      '@mui/icons-material':
+        specifier: ^5.14.11
+        version: 5.14.11(@mui/material@5.14.11)(@types/react@18.2.23)(react@18.2.0)
+      '@mui/material':
+        specifier: ^5.14.11
+        version: 5.14.11(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
+      next:
+        specifier: ^13.5.3
+        version: 13.5.3(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
 
 packages:
 

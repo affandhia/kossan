@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main>kossan</main>
+  return <main>kossan</main>;
 }

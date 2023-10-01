@@ -1,5 +1,5 @@
-import { Typography, Box } from '@mui/material'
-import { FC } from 'react'
+import { Typography, Box } from '@mui/material';
+import { FC } from 'react';
 
 const defaultData = {
   landlord: {
@@ -35,25 +35,17 @@ const defaultData = {
     latePaymentDate: 'September 5, 2023',
   },
   comments: 'Please make checks payable to ABC Rentals.',
-}
+};
 
-type InvoiceData = typeof defaultData
+type InvoiceData = typeof defaultData;
 
 interface InvoiceProps {
-  data: InvoiceData
+  data: InvoiceData;
 }
 
 const Invoice: FC<InvoiceProps> = ({ data = defaultData }) => {
-  const {
-    landlord,
-    tenant,
-    invoice,
-    property,
-    payment,
-    otherCharges,
-    paymentTerms,
-    comments,
-  } = data
+  const { landlord, tenant, invoice, property, payment, otherCharges, paymentTerms, comments } =
+    data;
   return (
     <Box>
       <Typography variant="h4" component="div">
@@ -90,9 +82,7 @@ const Invoice: FC<InvoiceProps> = ({ data = defaultData }) => {
       <Typography variant="h5" component="div">
         Payment Information:
       </Typography>
-      <Typography>
-        Accepted Payment Methods: {payment.acceptedMethods.join(', ')}
-      </Typography>
+      <Typography>Accepted Payment Methods: {payment.acceptedMethods.join(', ')}</Typography>
 
       <Typography variant="h5" component="div">
         Other Charges:
@@ -103,8 +93,7 @@ const Invoice: FC<InvoiceProps> = ({ data = defaultData }) => {
         Payment Terms:
       </Typography>
       <Typography>
-        Late Payment Penalty: {paymentTerms.latePaymentPenalty} after{' '}
-        {paymentTerms.latePaymentDate}
+        Late Payment Penalty: {paymentTerms.latePaymentPenalty} after {paymentTerms.latePaymentDate}
       </Typography>
 
       <Typography variant="h5" component="div">
@@ -112,7 +101,7 @@ const Invoice: FC<InvoiceProps> = ({ data = defaultData }) => {
       </Typography>
       <Typography>{comments}</Typography>
     </Box>
-  )
-}
+  );
+};
 
-export default Invoice
+export default Invoice;

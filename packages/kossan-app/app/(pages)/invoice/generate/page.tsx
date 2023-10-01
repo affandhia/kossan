@@ -1,3 +1,3 @@
 export default function InvoiceGeneratePage() {
-  return <main>Invoice</main>
+  return <main>Invoice</main>;
 }

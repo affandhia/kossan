@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@kossan/core": "workspace:*",
+    "@kossan/design-system": "workspace:*",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@kossan/core": "workspace:*",
     "eslint-config-kossan": "workspace:*",
     "eslint-config-next": "13.5.3"
   }

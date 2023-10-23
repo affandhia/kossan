@@ -15,5 +15,10 @@
         "prefix": "@"
       }
     ]
+  },
+  "settings": {
+    "next": {
+      "rootDir": "packages/kossan-app/"
+    }
   }
 }

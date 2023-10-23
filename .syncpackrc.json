@@ -1,0 +1,43 @@
+{
+  "customTypes": [],
+  "dependencyTypes": [
+    "dev",
+    "local",
+    "overrides",
+    "peer",
+    "pnpmOverrides",
+    "prod",
+    "resolutions"
+  ],
+  "filter": ".",
+  "indent": "  ",
+  "semverGroups": [],
+  "semverRange": "",
+  "sortAz": [
+    "contributors",
+    "dependencies",
+    "devDependencies",
+    "keywords",
+    "peerDependencies",
+    "resolutions",
+    "scripts"
+  ],
+  "sortFirst": ["name", "description", "version", "author"],
+  "source": ["package.json", "packages/*/package.json"],
+  "versionGroups": [
+    {
+      "packages": ["**"],
+      "dependencies": [
+        "each",
+        "package",
+        "name",
+        "developed",
+        "in",
+        "this",
+        "monorepo"
+      ],
+      "dependencyTypes": ["dev"],
+      "pinVersion": "workspace:*"
+    }
+  ]
+}

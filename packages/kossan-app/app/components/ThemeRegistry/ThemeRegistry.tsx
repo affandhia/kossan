@@ -38,13 +38,13 @@ const ThemeRegistry = (props: PropsWithChildren<{ options: Options }>) => {
 
   useServerInsertedHTML(() => {
     const names = flush();
-    
+
     if (names.length === 0) {
       return null;
     }
 
-    const styles = names.map(name => cache.inserted[name]).join('');
-    
+    const styles = names.map((name) => cache.inserted[name]).join('');
+
     return (
       <style
         key={cache.key}
@@ -65,6 +65,6 @@ const ThemeRegistry = (props: PropsWithChildren<{ options: Options }>) => {
       </ThemeProvider>
     </CacheProvider>
   );
-}
+};
 
 export default ThemeRegistry;

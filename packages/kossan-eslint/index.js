@@ -1,9 +1,8 @@
 module.exports = {
   extends: ['airbnb', 'airbnb/hooks', 'airbnb-typescript', 'prettier'],
   plugins: ['no-relative-import-paths'],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './packages/kossan-core/tsconfig.json',
+    project: './tsconfig.json',
   },
   rules: {
     quotes: ['error', 'single'],

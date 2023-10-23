@@ -1,5 +1,5 @@
 /* eslint-disable react/function-component-definition */
-import ThemeRegistry from '../components/ThemeRegistry/ThemeRegistry';
+import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 
 export const metadata = {
   title: 'Create Next App',

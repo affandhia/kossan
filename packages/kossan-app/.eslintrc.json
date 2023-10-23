@@ -1,17 +1,11 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "kossan"
-  ],
-  "parserOptions": {
-    "project": "./packages/kossan-app/tsconfig.json"
-  },
+  "extends": ["next/core-web-vitals", "kossan"],
   "rules": {
     "no-relative-import-paths/no-relative-import-paths": [
       "error",
       {
         "allowSameFolder": true,
-        "rootDir": "packages/kossan-app/app",
+        "rootDir": "app",
         "prefix": "@"
       }
     ]

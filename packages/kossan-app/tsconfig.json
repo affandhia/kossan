@@ -2,21 +2,15 @@
   "extends": "@kossan/core/tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "@/*": [
-        "./app/*"
-      ],
+      "@/*": ["./app/*"]
     },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "jsx": "preserve"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

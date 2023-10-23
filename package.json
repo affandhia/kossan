@@ -4,15 +4,16 @@
     "start": "pnpm --stream -r start",
     "dev": "pnpm --parallel --stream -r run dev",
     "build": "pnpm --stream -r run build",
-    "clean": "rm -rf .parcel-cache && pnpm -r run clean"
+    "clean": "rm -rf .parcel-cache && pnpm -r run clean",
+    "prepare": "husky install"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
     "@types/node": "^20.8.0",
-    "@types/react": "1^8.2.23",
-    "@types/react-dom": "1^8.2.8",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.8",
     "eslint": "^8.50.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -25,6 +26,7 @@
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "syncpack": "^11.2.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "husky": "^8.0.0"
   }
 }

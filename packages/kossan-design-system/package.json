@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "main": "./index.ts",
+  "scripts": {
+    "lint": "lint-staged"
+  },
   "devDependencies": {
     "@kossan/core": "workspace:*",
     "eslint-config-kossan": "workspace:*"

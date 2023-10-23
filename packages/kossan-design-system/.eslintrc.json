@@ -1,16 +1,11 @@
 {
-  "extends": [
-    "kossan"
-  ],
-  "parserOptions": {
-    "project": "./packages/kossan-design-system/tsconfig.json"
-  },
+  "extends": ["kossan"],
   "rules": {
     "no-relative-import-paths/no-relative-import-paths": [
       "error",
       {
         "allowSameFolder": true,
-        "rootDir": "packages/kossan-design-system/src",
+        "rootDir": "src",
         "prefix": "@"
       }
     ]

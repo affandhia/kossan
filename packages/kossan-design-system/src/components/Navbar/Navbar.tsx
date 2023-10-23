@@ -1,4 +1,4 @@
-import { Invoice } from '../Invoice';
+import { Invoice } from '@/components/Invoice';
 
 console.log(Invoice);
 

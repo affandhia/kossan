@@ -5,5 +5,15 @@
   ],
   "parserOptions": {
     "project": "./packages/kossan-app/tsconfig.json"
+  },
+  "rules": {
+    "no-relative-import-paths/no-relative-import-paths": [
+      "error",
+      {
+        "allowSameFolder": true,
+        "rootDir": "packages/kossan-app/app",
+        "prefix": "@"
+      }
+    ]
   }
 }

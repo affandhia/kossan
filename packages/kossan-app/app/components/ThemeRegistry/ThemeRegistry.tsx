@@ -1,47 +1,50 @@
 'use client';
+
 import { PropsWithChildren, useState } from 'react';
 import createCache, { Options } from '@emotion/cache';
 import { useServerInsertedHTML } from 'next/navigation';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '@/styles/themes/default';
 import CssBaseline from '@mui/material/CssBaseline';
 
+import theme from '../../styles/themes/default';
 
 // This implementation is from emotion-js
 // https://github.com/emotion-js/emotion/issues/2928#issuecomment-1319747902
-export default function ThemeRegistry(props: PropsWithChildren<{ options: Options }>) {
+const ThemeRegistry = (props: PropsWithChildren<{ options: Options }>) => {
   const { options, children } = props;
 
   const [{ cache, flush }] = useState(() => {
-    const cache = createCache(options);
-    cache.compat = true;
-    const prevInsert = cache.insert;
+    const innerCache = createCache(options);
+    innerCache.compat = true;
+    const prevInsert = innerCache.insert;
     let inserted: string[] = [];
-    cache.insert = (...args) => {
+    innerCache.insert = (...args) => {
       const serialized = args[1];
-      if (cache.inserted[serialized.name] === undefined) {
+      if (innerCache.inserted[serialized.name] === undefined) {
         inserted.push(serialized.name);
       }
       return prevInsert(...args);
     };
-    const flush = () => {
+
+    const innerFlush = () => {
       const prevInserted = inserted;
       inserted = [];
       return prevInserted;
     };
-    return { cache, flush };
+
+    return { cache: innerCache, flush: innerFlush };
   });
 
   useServerInsertedHTML(() => {
     const names = flush();
+    
     if (names.length === 0) {
       return null;
     }
-    let styles = '';
-    for (const name of names) {
-      styles += cache.inserted[name];
-    }
+
+    const styles = names.map(name => cache.inserted[name]).join('');
+    
     return (
       <style
         key={cache.key}
@@ -62,3 +65,5 @@ export default function ThemeRegistry(props: PropsWithChildren<{ options: Option
     </CacheProvider>
   );
 }
+
+export default ThemeRegistry;

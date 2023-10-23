@@ -1,3 +1,3 @@
-export default function Home() {
-  return <main>kossan</main>;
-}
+ const Home = () => <main>{'kossan'}</main>
+
+export default Home;

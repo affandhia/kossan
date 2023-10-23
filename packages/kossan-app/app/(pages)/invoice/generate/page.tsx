@@ -1,3 +1,3 @@
-export default function InvoiceGeneratePage() {
-  return <main>Invoice</main>;
-}
+const InvoiceGeneratePage = () => <main>{'Invoice'}</main>
+
+export default InvoiceGeneratePage;

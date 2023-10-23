@@ -41,7 +41,7 @@ const paymentTerms = {
 
 const comments = 'Please make checks payable to ABC Rentals.';
 
-export default function InvoiceIdPage() {
+const InvoiceIdPage = () => {
   const invoiceData = {
     landlord,
     tenant,
@@ -59,3 +59,5 @@ export default function InvoiceIdPage() {
     </main>
   );
 }
+
+export default InvoiceIdPage;

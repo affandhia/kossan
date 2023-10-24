@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm --filter @kossan/app --filter @kossan/design-system lint
+pnpm --filter @kossan/app --filter @kossan/ui lint

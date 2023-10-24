@@ -1,13 +1,24 @@
-import { Canvas, Meta } from '@storybook/blocks';
+import {
+  Canvas,
+  Meta,
+  Story,
+  Controls,
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+} from '@storybook/blocks';
 
-import * as CheckboxStories from './Invoice.stories';
+import * as Stories from './Invoice.stories';
 
-<Meta of={CheckboxStories} />
+<Meta of={Stories} />
 
-# Checkbox
+<Title />
 
-A checkbox is a square box that can be activated or deactivated when ticked. 
+## Component
 
-Use checkboxes to select one or more options from a list of choices.
+<Primary />
 
-<Canvas of={CheckboxStories.Unchecked} />
+## Props
+
+<Controls />

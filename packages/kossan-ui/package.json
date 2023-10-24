@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@kossan/core": "workspace:*",
+    "@storybook/addon-docs": "^7.5.1",
     "@storybook/addon-essentials": "^7.5.1",
     "@storybook/addon-interactions": "^7.5.1",
     "@storybook/addon-links": "^7.5.1",

@@ -1,10 +1,9 @@
 import { Typography, Box } from '@mui/material';
 import { FC } from 'react';
 
-import { defaultData } from './constants';
 import { InvoiceProps } from './types';
 
-const Invoice: FC<InvoiceProps> = ({ data = defaultData }) => {
+const Invoice: FC<InvoiceProps> = ({ data }) => {
   const { landlord, tenant, invoice, property, payment, otherCharges, paymentTerms, comments } =
     data;
   return (

@@ -1,5 +1,5 @@
 {
-  "extends": ["kossan"],
+  "extends": ["plugin:storybook/recommended", "kossan"],
   "rules": {
     "no-relative-import-paths/no-relative-import-paths": [
       "error",

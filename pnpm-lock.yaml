@@ -73,7 +73,7 @@ importers:
         version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.23)(react@18.2.0)
       '@kossan/ui':
         specifier: workspace:*
-        version: link:../kossan-design-system
+        version: link:../kossan-ui
       '@mui/icons-material':
         specifier: ^5.14.11
         version: 5.14.11(@mui/material@5.14.11)(@types/react@18.2.23)(react@18.2.0)
@@ -101,34 +101,6 @@ importers:
         version: 13.5.3(eslint@8.50.0)(typescript@5.2.2)
 
   packages/kossan-core: {}
-
-  packages/kossan-design-system:
-    dependencies:
-      '@emotion/react':
-        specifier: ^11.11.1
-        version: 11.11.1(@types/react@18.2.23)(react@18.2.0)
-      '@emotion/styled':
-        specifier: ^11.11.0
-        version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.23)(react@18.2.0)
-      '@mui/icons-material':
-        specifier: ^5.14.11
-        version: 5.14.11(@mui/material@5.14.11)(@types/react@18.2.23)(react@18.2.0)
-      '@mui/material':
-        specifier: ^5.14.11
-        version: 5.14.11(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@kossan/core':
-        specifier: workspace:*
-        version: link:../kossan-core
-      eslint-config-kossan:
-        specifier: workspace:*
-        version: link:../kossan-eslint
 
   packages/kossan-eslint:
     dependencies:
@@ -159,6 +131,34 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^4.3.0
         version: 4.6.0(eslint@8.50.0)
+
+  packages/kossan-ui:
+    dependencies:
+      '@emotion/react':
+        specifier: ^11.11.1
+        version: 11.11.1(@types/react@18.2.23)(react@18.2.0)
+      '@emotion/styled':
+        specifier: ^11.11.0
+        version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.23)(react@18.2.0)
+      '@mui/icons-material':
+        specifier: ^5.14.11
+        version: 5.14.11(@mui/material@5.14.11)(@types/react@18.2.23)(react@18.2.0)
+      '@mui/material':
+        specifier: ^5.14.11
+        version: 5.14.11(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@kossan/core':
+        specifier: workspace:*
+        version: link:../kossan-core
+      eslint-config-kossan:
+        specifier: workspace:*
+        version: link:../kossan-eslint
 
 packages:
 

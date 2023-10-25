@@ -16,6 +16,7 @@ export const defaultData = {
     number: '001',
   },
   property: {
+    name: 'Herliana Apartments',
     address: '456 Elm Street, Anytown USA',
     rentDue: '$500.00',
     rentFrequency: 'Monthly',
@@ -32,6 +33,7 @@ export const defaultData = {
     latePaymentDate: 'September 5, 2023',
   },
   comments: 'Please make checks payable to ABC Rentals.',
+  status: 'Paid',
 };
 
 export default defaultData;

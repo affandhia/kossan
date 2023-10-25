@@ -42,5 +42,6 @@ module.exports = {
     'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'always', propElementValues: 'always' }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
   },
 };

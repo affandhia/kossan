@@ -1,3 +1,5 @@
+import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
@@ -10,6 +12,16 @@ const preview = {
     },
     docs: {
       toc: true, // 👈 Enables the table of contents
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories />
+        </>
+      ),
     },
   },
 };

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Invoice from './Invoice';
-import DefaultData from './constants';
+import DefaultData from './fixtures';
 
 const meta: Meta<typeof Invoice> = {
   title: 'Pattern/Invoice',

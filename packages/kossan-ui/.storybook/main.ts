@@ -1,4 +1,6 @@
-import { join, dirname } from 'path';
+import { join, dirname, resolve } from 'path';
+import { mergeConfig } from 'vite';
+import type { StorybookConfig } from '@storybook/react-vite';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -9,7 +11,7 @@ function getAbsolutePath(value) {
 }
 
 /** @type { import('@storybook/react-vite').StorybookConfig } */
-const config = {
+const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     getAbsolutePath('@storybook/addon-links'),
@@ -18,11 +20,19 @@ const config = {
     getAbsolutePath('@storybook/addon-interactions'),
   ],
   framework: {
+    // @ts-ignore - this is a valid option for monorepo setup
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
   docs: {
     autodocs: 'tag',
+  },
+  async viteFinal(config, { configType }) {
+    return mergeConfig(config, {
+      resolve: {
+        alias: { '@': resolve(__dirname, '..', 'src') },
+      },
+    });
   },
 };
 export default config;

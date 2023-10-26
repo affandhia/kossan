@@ -1,6 +1,6 @@
 import { PriceDetailProps } from './types';
 
-export const defaultData: PriceDetailProps = {
+export const PriceDetailMock: PriceDetailProps = {
   prices: [
     { label: 'Price', amount: 100 },
     { label: 'Tax', amount: 20 },
@@ -16,4 +16,4 @@ export const defaultData: PriceDetailProps = {
   discount: 10,
 };
 
-export default defaultData;
+export default PriceDetailMock;

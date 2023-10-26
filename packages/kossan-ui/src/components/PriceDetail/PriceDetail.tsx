@@ -1,13 +1,23 @@
 import React, { Fragment } from 'react';
-import { List, ListItem, ListItemText, Typography } from '@mui/material';
+import { List, ListItem, ListItemText, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 
 import { PriceDetailProps, PriceItem } from './types';
 
 const NestedListItem = ({ label, amount, subItems }: PriceItem) => (
   <Fragment key={label}>
-    <ListItem>
-      <ListItemText primary={label} />
-      <ListItemText sx={{ textAlign: 'right' }} primary={amount} />
+    <ListItem sx={{ borderBottom: 1 }}>
+      <ListItemText
+        primary={
+          <Grid container>
+            <Grid xs={12} sm={6}>
+              <Typography variant="body1">{label}</Typography>
+            </Grid>
+            <Grid xs={12} sm={6} textAlign={{ xs: 'left', sm: 'right' }}>
+              <Typography variant="caption">{amount}</Typography>
+            </Grid>
+          </Grid>
+        }
+      />
     </ListItem>
     {subItems && (
       <List disablePadding sx={{ pl: 1 }}>

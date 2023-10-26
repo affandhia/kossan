@@ -1,6 +1,6 @@
-import { defaultData } from './constants';
+import { InvoiceMock } from './fixtures';
 
-type InvoiceData = typeof defaultData;
+type InvoiceData = typeof InvoiceMock;
 export interface InvoiceProps {
   data: InvoiceData;
 }

@@ -1,4 +1,6 @@
-export const defaultData = {
+import PriceDetailMock from '@/components/PriceDetail/fixtures';
+
+export const InvoiceMock = {
   landlord: {
     name: 'John Doe',
     companyName: 'ABC Rentals',
@@ -14,6 +16,7 @@ export const defaultData = {
   invoice: {
     date: 'August 30, 2023',
     number: '001',
+    priceDetail: PriceDetailMock,
   },
   property: {
     name: 'Herliana Apartments',
@@ -36,4 +39,4 @@ export const defaultData = {
   status: 'Paid',
 };
 
-export default defaultData;
+export default InvoiceMock;

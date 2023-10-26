@@ -3,6 +3,8 @@ import { FC } from 'react';
 
 import { InvoiceProps } from './types';
 
+import PriceDetail from '@/components/PriceDetail/PriceDetail';
+
 const Invoice: FC<InvoiceProps> = ({ data }) => {
   const {
     // landlord,
@@ -81,12 +83,7 @@ const Invoice: FC<InvoiceProps> = ({ data }) => {
                   {'Rincian Pembayaran'}
                 </Typography>
                 <Box>
-                  <Typography variant="body1" color="gray">
-                    {'Nama Penyewa'}
-                  </Typography>
-                  <Typography variant="body1" fontWeight="bold">
-                    {tenant.name}
-                  </Typography>
+                  <PriceDetail {...invoice.priceDetail} />
                 </Box>
               </Stack>
             </Paper>

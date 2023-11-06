@@ -1,4 +1,4 @@
-import { Typography, Box, Stack, Paper, Unstable_Grid2 as Grid } from '@mui/material';
+import { Typography, Box, Stack, Unstable_Grid2 as Grid } from '@mui/material';
 import { FC } from 'react';
 
 import { InvoiceProps } from './types';
@@ -18,79 +18,102 @@ const Invoice: FC<InvoiceProps> = ({ data }) => {
     status,
   } = data;
   return (
-    <Box>
-      <Box sx={{ p: 2 }}>
-        <Typography variant="h4">{'Bukti Pembayaran'}</Typography>
-        <Typography variant="h6">{`No. Invoice: ${invoice.number}`}</Typography>
-      </Box>
-
+    <Stack spacing={2}>
       <Grid container spacing={2}>
+        <Grid xs={12} md={4} pl={{ md: 10 }} bgcolor="primary.main">
+          <Typography variant="h4" fontWeight="bold" color="grey.50">
+            {'BUKTI PEMBAYARAN'}
+          </Typography>
+        </Grid>
+        <Grid
+          xs={12}
+          md={8}
+          borderRight={{ md: 40 }}
+          borderColor={{ md: 'primary.main' }}
+          alignItems="center"
+          display="flex"
+          justifyContent={{ md: 'end' }}
+        >
+          <Stack
+            spacing={1}
+            direction={{ xs: 'row', md: 'column' }}
+            alignItems={{ xs: 'center', md: 'end' }}
+          >
+            <Typography variant="h6" color="primary.light" fontWeight="bold">
+              {'INVOICE #'}
+            </Typography>
+            <Typography variant="subtitle1" color="primary.dark">
+              {invoice.number}
+            </Typography>
+          </Stack>
+        </Grid>
+      </Grid>
+      <Grid container>
         <Grid xs={12} md={4}>
-          <Paper sx={{ p: 2 }}>
-            <Stack gap={1}>
-              <Typography variant="h5" fontWeight="bold">
+          <Box p={2} borderBottom={1} borderColor="grey.300">
+            <Stack spacing={1}>
+              <Typography variant="h5" fontWeight="bold" color="primary.light">
                 {'Ringkasan'}
               </Typography>
               <Box>
-                <Typography variant="body1" color="gray">
+                <Typography variant="body1" color="grey.500">
                   {'Tanggal Pembayaran'}
                 </Typography>
-                <Typography variant="body1" fontWeight="bold">
+                <Typography variant="body1" fontWeight="bold" color="primary.main">
                   {invoice.date}
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="body1" color="gray">
+                <Typography variant="body1" color="grey.500">
                   {'Status Transaksi'}
                 </Typography>
-                <Typography variant="body1" fontWeight="bold">
+                <Typography variant="body1" fontWeight="bold" color="primary.main">
                   {status}
                 </Typography>
               </Box>
             </Stack>
-          </Paper>
+          </Box>
         </Grid>
 
         <Grid xs={12} md={8}>
           <Stack spacing={2}>
-            <Paper sx={{ p: 2 }}>
-              <Stack gap={1}>
-                <Typography variant="h5" fontWeight="bold">
+            <Box p={2} borderBottom={1} borderColor="grey.300">
+              <Stack spacing={1}>
+                <Typography variant="h5" fontWeight="bold" color="primary.light">
                   {'Informasi Penyewa'}
                 </Typography>
                 <Box>
-                  <Typography variant="body1" color="gray">
+                  <Typography variant="body1" color="grey.500">
                     {'Nama Penyewa'}
                   </Typography>
-                  <Typography variant="body1" fontWeight="bold">
+                  <Typography variant="body1" fontWeight="bold" color="primary.main">
                     {tenant.name}
                   </Typography>
                 </Box>
                 <Box>
-                  <Typography variant="body1" color="gray">
+                  <Typography variant="body1" color="grey.500">
                     {'Unit'}
                   </Typography>
-                  <Typography variant="body1" fontWeight="bold">
+                  <Typography variant="body1" fontWeight="bold" color="primary.main">
                     {property.name}
                   </Typography>
                 </Box>
               </Stack>
-            </Paper>
+            </Box>
 
-            <Paper sx={{ p: 2 }}>
-              <Stack gap={1}>
-                <Typography variant="h5" fontWeight="bold">
+            <Box sx={{ p: 2 }}>
+              <Stack spacing={1}>
+                <Typography variant="h5" fontWeight="bold" color="primary.light">
                   {'Rincian Pembayaran'}
                 </Typography>
                 <Box>
                   <PriceDetail {...invoice.priceDetail} />
                 </Box>
               </Stack>
-            </Paper>
+            </Box>
           </Stack>
         </Grid>
       </Grid>
-
       {/* <Typography variant="h5">
         {'Landlord'}&rsquo;{'s Information:'}
       </Typography>
@@ -175,7 +198,7 @@ const Invoice: FC<InvoiceProps> = ({ data }) => {
 
       <Typography variant="h5">{'Comments or Notes:'}</Typography>
       <Typography>{comments}</Typography> */}
-    </Box>
+    </Stack>
   );
 };
 

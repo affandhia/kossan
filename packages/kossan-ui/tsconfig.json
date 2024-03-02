@@ -1,6 +1,7 @@
 {
   "extends": "@kossan/core/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

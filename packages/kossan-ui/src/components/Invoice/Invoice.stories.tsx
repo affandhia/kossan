@@ -15,4 +15,7 @@ export const Overview: Story = {
   args: {
     data: DefaultData,
   },
+  parameters: {
+    backgrounds: { default: 'light' },
+  },
 };

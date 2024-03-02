@@ -6,5 +6,6 @@ export interface PriceItem {
 
 export interface PriceDetailProps {
   prices: PriceItem[];
+  currencyFormatter: (item: PriceItem) => string;
   discount?: number;
 }

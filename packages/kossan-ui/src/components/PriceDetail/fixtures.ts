@@ -1,5 +1,7 @@
 import { PriceDetailProps } from './types';
 
+import { currencyIDR } from '@/utils';
+
 export const PriceDetailMock: PriceDetailProps = {
   prices: [
     { label: 'Price', amount: 100 },
@@ -13,6 +15,7 @@ export const PriceDetailMock: PriceDetailProps = {
       ],
     },
   ],
+  currencyFormatter: (item) => currencyIDR(item.amount),
   discount: 10,
 };
 

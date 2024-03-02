@@ -21,6 +21,7 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
+    'import/prefer-default-export': 'off',
     'no-multiple-empty-lines': [
       'error',
       {

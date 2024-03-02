@@ -8,8 +8,13 @@ import {
   TypographyProps,
   Stack,
 } from '@mui/material';
+import { createStateContext } from 'react-use';
 
 import { PriceDetailProps, PriceItem } from './types';
+
+import { currencyIDR } from '@/utils';
+
+const [useProps, PropsProvider] = createStateContext(null as unknown as PriceDetailProps);
 
 const TextItem = ({
   label,
@@ -23,12 +28,12 @@ const TextItem = ({
   valueProps?: TypographyProps;
 }) => (
   <Grid container>
-    <Grid xs={12} sm={6}>
+    <Grid xs={12} md={6}>
       <Typography color="primary.light" variant="body1" {...labelProps}>
         {label}
       </Typography>
     </Grid>
-    <Grid xs={12} sm={6} textAlign={{ xs: 'left', sm: 'right' }}>
+    <Grid xs={12} md={6} textAlign={{ xs: 'left', md: 'right' }}>
       <Typography color="primary.light" variant="caption" {...valueProps}>
         {value}
       </Typography>
@@ -36,27 +41,40 @@ const TextItem = ({
   </Grid>
 );
 
-const NestedListItem = ({ label, amount, subItems }: PriceItem) => (
-  <Fragment key={label}>
-    <ListItem sx={{ borderBottom: 1, borderColor: 'grey.300' }}>
-      <ListItemText primary={<TextItem label={label} value={amount} />} />
-    </ListItem>
-    {subItems && (
-      <List disablePadding sx={{ pl: 1 }}>
-        {subItems.map((subItem) => (
-          <NestedListItem {...subItem} />
-        ))}
-      </List>
-    )}
-  </Fragment>
-);
+const NestedListItem: FC<PriceItem> = (props) => {
+  const { label, subItems } = props;
+  const [{ currencyFormatter }] = useProps();
 
-const PriceDetail: FC<PriceDetailProps> = ({ prices, discount }) => {
+  return (
+    <Fragment key={label}>
+      <ListItem sx={{ borderBottom: 1, borderColor: 'grey.300' }}>
+        <ListItemText
+          primary={
+            <TextItem
+              label={label}
+              value={subItems ? `${currencyFormatter(props)} (Total)` : currencyFormatter(props)}
+            />
+          }
+        />
+      </ListItem>
+      {subItems && (
+        <List disablePadding sx={{ pl: 1 }}>
+          {subItems.map((subItem) => (
+            <NestedListItem {...subItem} />
+          ))}
+        </List>
+      )}
+    </Fragment>
+  );
+};
+
+const PriceDetail: FC<PriceDetailProps> = (props) => {
+  const { prices, discount } = props;
   const totalAmount = prices.reduce((acc, { amount }) => acc + amount, 0);
   const discountedAmount = discount ? totalAmount * (1 - discount / 100) : totalAmount;
 
   return (
-    <>
+    <PropsProvider initialValue={props}>
       <List>
         <ListItem sx={{ backgroundColor: 'primary.dark' }}>
           <ListItemText
@@ -65,7 +83,12 @@ const PriceDetail: FC<PriceDetailProps> = ({ prices, discount }) => {
                 label="ITEM"
                 value="HARGA"
                 labelProps={{ fontWeight: 'bold', color: 'grey.50' }}
-                valueProps={{ color: 'grey.50', variant: 'body1', fontWeight: 'bold' }}
+                valueProps={{
+                  color: 'grey.50',
+                  variant: 'body1',
+                  fontWeight: 'bold',
+                  display: { xs: 'none', md: 'initial' },
+                }}
               />
             }
           />
@@ -80,19 +103,19 @@ const PriceDetail: FC<PriceDetailProps> = ({ prices, discount }) => {
           <Stack spacing={1}>
             <TextItem
               label={discount ? 'SUBTOTAL' : 'TOTAL'}
-              value={totalAmount.toFixed(2)}
+              value={currencyIDR(totalAmount)}
               labelProps={{ fontWeight: 'bold', color: 'primary.dark' }}
             />
             {discount && (
               <>
                 <TextItem
                   label="DISCOUNT"
-                  value={`${discount}% ($${(totalAmount - discountedAmount).toFixed(2)})`}
+                  value={`${discount}% ($${currencyIDR(totalAmount - discountedAmount)})`}
                   labelProps={{ fontWeight: 'bold', color: 'primary.dark' }}
                 />
                 <TextItem
                   label="TOTAL"
-                  value={discountedAmount.toFixed(2)}
+                  value={currencyIDR(discountedAmount)}
                   labelProps={{ fontWeight: 'bold', color: 'primary.dark' }}
                 />
               </>
@@ -100,7 +123,7 @@ const PriceDetail: FC<PriceDetailProps> = ({ prices, discount }) => {
           </Stack>
         </Grid>
       </Grid>
-    </>
+    </PropsProvider>
   );
 };
 

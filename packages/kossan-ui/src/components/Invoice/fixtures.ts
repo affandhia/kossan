@@ -16,7 +16,10 @@ export const InvoiceMock = {
   invoice: {
     date: 'August 30, 2023',
     number: '001',
-    priceDetail: PriceDetailMock,
+    priceDetail: {
+      ...PriceDetailMock,
+      discount: undefined,
+    },
   },
   property: {
     name: 'Herliana Apartments',

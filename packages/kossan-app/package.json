@@ -9,19 +9,19 @@
     "lint": "lint-staged"
   },
   "dependencies": {
-    "@kossan/ui": "workspace:*",
     "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.1",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.11",
-    "@mui/material": "^5.14.11",
-    "next": "^13.5.3",
+    "@kossan/ui": "workspace:*",
+    "@mui/icons-material": "^5.15.11",
+    "@mui/material": "^5.15.11",
+    "next": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@kossan/core": "workspace:*",
     "eslint-config-kossan": "workspace:*",
-    "eslint-config-next": "13.5.3"
+    "eslint-config-next": "14.1.1"
   }
 }

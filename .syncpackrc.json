@@ -2,7 +2,6 @@
   "customTypes": [],
   "dependencyTypes": [
     "dev",
-    "local",
     "overrides",
     "peer",
     "pnpmOverrides",
@@ -28,13 +27,10 @@
     {
       "packages": ["**"],
       "dependencies": [
-        "each",
-        "package",
-        "name",
-        "developed",
-        "in",
-        "this",
-        "monorepo"
+        "@kossan/app",
+        "@kossan/ui",
+        "@kossan/core",
+        "eslint-config-kossan"
       ],
       "dependencyTypes": ["dev"],
       "pinVersion": "workspace:*"
